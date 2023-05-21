@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+/* special type selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* card-1 design start */
+.card-bg {
+  position: relative;
+  width: 780px;
+  height: 450px;
+  margin: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    rgba(183, 164, 141, 1) 11%,
+    rgba(60, 122, 201, 1) 100%,
+    rgba(27, 44, 54, 1) 100%,
+    rgba(0, 212, 255, 1) 100%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+
+.card-bg:before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(246, 249, 65, 0.707) 10%,
+    transparent 60%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-bg:hover:before {
+  transform: scale(0.5);
+}
+
+.card-body {
+  position: relative;
+  width: 60%;
+  height: 350px;
+  margin: auto;
+  background-color: #2C3B52;
+  border-radius: 15px;
+  z-index: 9999;
+}
+
+.card-title,
+.card-txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.border-bottom {
+    border: 1px solid rgb(170, 166, 166);
+    margin: auto;
+    position: relative;
+    opacity: 0.3;
+    top: -30%;
+    width: 412px;
+    display: block;
+}
+
+.card-title h1 {
+  font-size: 32px;
+  font-weight: 300;
+  text-align: center;
+  opacity: 70%;
+  color: white;
+  letter-spacing: 0.2ch;
+  text-transform: uppercase;
+}
+
+.card-txt {
+  padding: 0;
+  width: 100%;
+}
+
+.card-txt h4 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 200;
+  color: azure;
+  opacity: 30%;
+  letter-spacing: 0.1ch;
+  text-transform: uppercase;
+  padding: 0 7px;
+}
+
+/* for social icon */
+.social-icons {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding-top: 25px;
+  justify-content: space-evenly;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+  text-align: center;
+  color: #fff;
+  line-height: 40px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background-color: #666;
+}
+
+.social-icons .twitter {
+  background-color: #1DA1F2;
+}
+
+.social-icons .linked-in {
+  background-color: #0077B5;
+}
+
+.social-icons .facebook {
+  background-color: #385395;
+}
+
+.social-icons .instagram {
+  background-color: #D806A8;
+}
+
+/* animation area design */
+.animation-area {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 0;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(188, 188, 188, 0.239);
+  filter: blur(2px);
+  visibility: hidden;
+  opacity: 0;
+  animation: hideShow 2s linear infinite;
+  animation-delay: calc(0.3s * var(--delay));
+}
+
+@keyframes hideShow {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+/* card-1 design end */
+
+/* mobile responsive for card-1 */
+@media screen and (max-width: 768px){
+  .animation-area {
+    overflow-x: hidden;
+  }
+
+  .card-body {
+    width: 80%;
+    height: 350px;
+  }
+
+  .border-bottom {
+    top: -25%;
+    width: 370px;
+  }
+}
+
+@media screen and (max-width: 570px){
+  .animation-area {
+    overflow-x: hidden;
+  }
+
+  .card-title h1 {
+    font-size: 26px;
+  }
+
+  .card-txt h4 {
+    font-size: 18px;
+  }
+
+  .border-bottom {
+    top: -25%;
+    width: 300px;
+  }
+
+  .social-icons {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 432px){
+  .animation-area {
+    overflow-x: hidden;
+  }
+
+  .card-title h1 {
+    font-size: 22px;
+  }
+
+  .card-txt h4 {
+    font-size: 16px;
+  }
+
+  .border-bottom {
+    top: -22%;
+    width: 270px;
+  }
+}
+
+@media screen and (max-width: 390px){
+  .animation-area {
+    overflow-x: hidden;
+  }
+
+  .card-title h1 {
+    font-size: 21px;
+  }
+
+  .card-txt h4 {
+    font-size: 15px;
+  }
+
+  .border-bottom {
+    top: -22%;
+    width: 220px;
+  }
+
+  .social-icons {
+    width: 90%;
+  }
+}
